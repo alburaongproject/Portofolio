@@ -12,9 +12,10 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --heading-font: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --nav-font: "Outfit", "Plus Jakarta Sans", sans-serif;
+  --code-font: "JetBrains Mono", monospace;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -64,6 +65,10 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.65;
 }
 
 a {
@@ -85,6 +90,8 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
+  letter-spacing: -0.025em;
+  font-weight: 700;
 }
 
 /* PHP Email Form Messages
@@ -175,9 +182,10 @@ h6 {
 }
 
 .header .logo h1 {
-  font-size: 24px;
+  font-size: 22px;
   margin: 0;
   font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--heading-color);
 }
 
@@ -267,10 +275,11 @@ h6 {
 .navmenu a,
 .navmenu a:focus {
   color: var(--nav-color);
-  padding: 15px 10px;
+  padding: 12px 14px;
   font-family: var(--nav-font);
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -518,7 +527,8 @@ section,
 
 .section-title h2 {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
@@ -537,6 +547,7 @@ section,
 
 .section-title p {
   margin-bottom: 0;
+  line-height: 1.7;
 }
 
 /*--------------------------------------------------------------
@@ -578,16 +589,21 @@ section,
 .hero h2 {
   margin: 0;
   font-size: 64px;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
 }
 
 .hero p {
-  margin: 5px 0 0 0;
+  margin: 10px 0 0 0;
   font-size: 26px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 .hero p span {
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
   border-bottom: 2px solid var(--accent-color);
 }
 
@@ -666,10 +682,12 @@ section,
 
 .stats .stats-item .purecounter {
   color: var(--heading-color);
-  font-size: 48px;
+  font-size: 46px;
   line-height: 40px;
   display: block;
-  font-weight: 700;
+  font-weight: 800;
+  font-family: var(--heading-font);
+  letter-spacing: -0.03em;
   margin-left: 60px;
 }
 
@@ -677,8 +695,9 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 40%);
   padding: 15px 0 0 0;
   margin: 0 0 0 60px;
-  font-family: var(--heading-font);
+  font-family: var(--nav-font);
   font-size: 14px;
+  letter-spacing: 0.2px;
 }
 
 /*--------------------------------------------------------------
@@ -699,11 +718,16 @@ section,
   display: block;
   font-weight: 600;
   font-family: var(--heading-font);
+  letter-spacing: 0.5px;
+  font-size: 13px;
 }
 
 .skills .progress .skill .val {
   float: right;
   font-style: normal;
+  font-family: var(--code-font), var(--heading-font);
+  font-weight: 600;
+  font-size: 13px;
 }
 
 .skills .progress-bar-wrap {
@@ -725,6 +749,7 @@ section,
   color: var(--heading-color);
   font-size: 26px;
   font-weight: 700;
+  letter-spacing: -0.025em;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -737,20 +762,26 @@ section,
 }
 
 .resume .resume-item h4 {
-  line-height: 18px;
-  font-size: 18px;
-  font-weight: 600;
+  line-height: 20px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   margin-bottom: 10px;
 }
 
 .resume .resume-item h5 {
-  font-size: 16px;
-  padding: 5px 15px;
+  font-size: 13px;
+  padding: 5px 12px;
   display: inline-block;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  font-family: var(--code-font), var(--heading-font);
+  letter-spacing: 0.5px;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
 }
 
 .resume .resume-item ul {
@@ -792,7 +823,9 @@ section,
   display: inline-block;
   padding: 0;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-family: var(--nav-font);
   margin: 0 10px;
   line-height: 1;
   text-transform: uppercase;
@@ -927,7 +960,8 @@ section,
 .services .service-item .title {
   font-weight: 700;
   margin-bottom: 15px;
-  font-size: 18px;
+  font-size: 19px;
+  letter-spacing: -0.02em;
 }
 
 .services .service-item .title a {
